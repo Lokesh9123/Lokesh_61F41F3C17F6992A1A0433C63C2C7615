@@ -1,23 +1,16 @@
-# Python program to find the factorial of a number provided by the user
-# using recursion
+def linear_search_product(product_list, target_product):
+    indices = []
+    for index, product in enumerate(product_list):
+        if product == target_product:
+            indices.append(index)
+    return indices
 
-def factorial(x):
-    """This is a recursive function
-    to find the factorial of an integer"""
+# Example usage
+products = ["Apple", "Banana", "Orange", "Apple", "Grapes", "Apple"]
+target_product = "Apple"
 
-    if x == 1:
-        return 1
-    else:
-        # recursive call to the function
-        return (x * factorial(x-1))
-
-
-# change the value for a different result
-num = 7
-
-# to take input from the user
-# num = int(input("Enter a number: "))
-
-# call the factorial function
-result = factorial(num)
-print("The factorial of", num, "is", result)
+result = linear_search_product(products, target_product)
+if result:
+    print(f"{target_product} found at indices: {result}")
+else:
+    print(f"{target_product} not found in the list.")
